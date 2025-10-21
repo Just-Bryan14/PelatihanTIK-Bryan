@@ -1,26 +1,31 @@
+/* Gaya Dasar (Mode Terang) */
 body {
-  background-color: #FFFFE0;
-  font-family: Arial, sans-serif;
-  color: #191970;
+    background-color: #FFFFE0;
+    font-family: Arial, sans-serif;
+    color: #191970;
+    /* ⬅️ DITAMBAHKAN: Transisi untuk Body */
+    transition: background-color 0.5s, color 0.5s; 
 }
 
 .kartu-profil {
-  width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    /* ⬅️ DIPINDAHKAN: Menggabungkan selector duplikat */
+    text-align: center; 
+    
+    /* ⬅️ DITAMBAHKAN: Transisi untuk Kartu Profil */
+    transition: background-color 0.5s, box-shadow 0.5s; 
 }
 
 
 .kartu-profil img {
-  width: 150px;
-  border-radius: 50%;
-}
-.kartu-profil {
-  /* . . . (kode dari slide sebelumnya) . . . */
-  text-align: center;
+    width: 150px;
+    border-radius: 50%;
 }
 
 .kartu-profil button {
@@ -31,7 +36,8 @@ body {
     border-radius: 5px;
     background-color: #007bff;
     color: white;
-    transition: background-color 0.3s, color 0.3s;
+    /* Sudah ada */
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .kartu-profil a {
@@ -40,25 +46,22 @@ body {
     text-decoration: none;
     color: #007bff;
 }
-/* ⬆️ AKHIR KODE BARU UNTUK TOMBOL & LINK ⬆️ */
 
-
-/* ⬇️ MULAI KODE BARU UNTUK DARK MODE (DI BAGIAN PALING BAWAH) ⬇️ */
 
 /* Gaya Mode Gelap (Class: .dark-mode) */
 .dark-mode {
-    background-color: #121212; /* Latar belakang body gelap */
-    color: #e0e0e0; /* Teks body terang */
+    background-color: #121212; 
+    color: #e0e0e0; 
 }
 
 /* Gaya kartu profil saat mode gelap aktif */
 .dark-mode .kartu-profil {
-    background-color: #1f1f1f; /* Latar belakang kartu gelap */
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Bayangan terang */
+    background-color: #1f1f1f; 
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); 
 }
 
 .dark-mode .kartu-profil a {
-    color: #8ab4f8; /* Tautan warna terang */
+    color: #8ab4f8; 
 }
 
 .dark-mode .kartu-profil button {
