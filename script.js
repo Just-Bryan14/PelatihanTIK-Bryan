@@ -19,3 +19,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+const themeToggle = document.getElementById('theme-toggle');
+    const body = document.getElementById('main-body'); // Mengambil body dengan ID yang sudah kita tambahkan
+    
+    // Memastikan kedua elemen (tombol mode dan body) ditemukan
+    if (themeToggle && body) {
+        
+        // Fungsi untuk mengganti tema dan menyimpan preferensi
+        function toggleTheme() {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = 'Ganti Mode Terang ☀️';
+                localStorage.setItem('theme', 'dark'); // Menyimpan di browser
+            } else {
+                themeToggle.textContent = 'Ganti Mode Gelap 🌙';
+                localStorage.setItem('theme', 'light'); // Menyimpan di browser
+            }
+        }
+
+        // Fungsi untuk memuat tema yang tersimpan saat DOM sudah siap
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggle.textContent = 'Ganti Mode Terang ☀️';
+            } else {
+                // Default ke mode terang jika tidak ada atau tersimpan 'light'
+                themeToggle.textContent = 'Ganti Mode Gelap 🌙';
+            }
+        }
+
+        // Tambahkan event listener ke tombol Dark/Light Mode
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Panggil fungsi loadTheme saat DOMContentLoaded
+        loadTheme();
+    }
+});
